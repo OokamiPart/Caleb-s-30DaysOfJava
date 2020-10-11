@@ -1,24 +1,13 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class Main {
-	public static void main (String [] args){
-		Scanner scan = new Scanner(System.in);
-		int size;
-		System.out.println("Determine the Array Size : ");
-		size = scan.nextInt();
-		
-		int[] arrayValue = new int[size];
-		
-		for(int i = 0; i < size; i++) {
-			int value;
-			System.out.println("Input the value : ");
-			value = scan.nextInt();
-			arrayValue[i] = value;
+	public static void main (String [] args) throws Exception{
+		BufferedReader read = new BufferedReader(new FileReader("name.txt"));
+		String name;
+		while((name = read.readLine()) != null ) {
+			System.out.println(name);
 		}
-		
-		for(int i = 0; i < size; i++) {
-			System.out.println("value of Array index " + i + " is "+ arrayValue[i]);
-		}
-		scan.close();
+		read.close();
 	}
 }
