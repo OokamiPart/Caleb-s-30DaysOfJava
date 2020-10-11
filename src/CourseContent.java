@@ -1,5 +1,4 @@
-
-
+/*
 public class CourseContent {
 	public static void main (String [] args) throws Exception{
 		int[][] array2d = {
@@ -15,3 +14,4 @@ public class CourseContent {
 		}
 	}
 }
+*/
