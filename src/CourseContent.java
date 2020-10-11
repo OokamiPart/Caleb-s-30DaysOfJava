@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.File;
 
-public class Main {
+public class CourseContent {
 	public static void main (String [] args) throws Exception{
 		Scanner scan = new Scanner(new File("name.txt"));
 		
