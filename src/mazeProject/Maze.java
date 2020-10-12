@@ -6,7 +6,7 @@ public class Maze {
 	
 	static int[][] map = {
 			{0, 0, 0, 0, 0, 0},
-			{0, 1, 0, 2, 1, 0},
+			{0, 1, 2, 1, 1, 0},
 			{0, 1, 0, 0, 1, 0},
 			{0, 1, 0, 0, 1, 0},
 			{0, 1, 1, 1, 1, 0},
@@ -30,8 +30,35 @@ public class Maze {
 				System.out.println("Moved down");
 				path.push(new Position(y+1, x));
 				continue;
-			} else if (map[y+1][x] == 0) {
-				System.out.println("Blocked, Cant Move down");
+			}
+			//Move left
+			if (map[y][x-1] == 2) {
+				System.out.println("Moved left, found it!");
+				return;
+			} else if (map[y][x-1] == 1) {
+				System.out.println("Moved left");
+				path.push(new Position(y, x-1));
+				continue;
+			} 
+			//Move right
+			if (map[y][x+1] == 2) {
+				System.out.println("Moved right, found it!");
+				return;
+			} else if (map[y][x+1] == 1) {
+				System.out.println("Moved right");
+				path.push(new Position(y, x+1));
+				continue;
+			} 
+			//Move up
+			if (map[y-1][x] == 2) {
+				System.out.println("Moved Up, found it!");
+				return;
+			} else if (map[y-1][x] == 1) {
+				System.out.println("Moved up");
+				path.push(new Position(y-1, x));
+				continue;
+			} else if (map[y-1][x] == 0) {
+				System.out.println("Blocked, Cant move up. Not found!!");
 				return;
 			}
 		}
