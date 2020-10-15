@@ -8,7 +8,7 @@ public class Solver{
 		currentMap = map;
 	}
 
-	public boolean validPos(int y, int x, Maps map) {
+	public boolean validPos(int y, int x) {
 		
 		if(y < 0 || y >= currentMap.map.length || x < 0 || x >= currentMap.map[y].length ) {
 			return false;
@@ -22,7 +22,7 @@ public class Solver{
 			int y = currentMap.walkthrough.peek().y;
 			currentMap.map[y][x] = 0;
 			//Move Down
-			if (validPos(y+1, x, currentMap)) {
+			if (validPos(y+1, x)) {
 				if (currentMap.map[y+1][x] == 2) {
 					System.out.println("Moved down, found it!");
 					return;
@@ -33,7 +33,7 @@ public class Solver{
 				}
 			}
 			//Move left
-			if(validPos(y, x-1, currentMap)) {
+			if(validPos(y, x-1)) {
 				if (currentMap.map[y][x-1] == 2) {
 					System.out.println("Moved left, found it!");
 					return;
@@ -44,7 +44,7 @@ public class Solver{
 				}
 			}
 			//Move right
-			if (validPos(y, x+1, currentMap)) {
+			if (validPos(y, x+1)) {
 				if (currentMap.map[y][x+1] == 2) {
 					System.out.println("Moved right, found it!");
 					return;
@@ -55,7 +55,7 @@ public class Solver{
 				}
 			}
 			//Move up
-			if(validPos(y-1, x, currentMap)) {
+			if(validPos(y-1, x)) {
 				if (currentMap.map[y-1][x] == 2) {
 					System.out.println("Moved Up, found it!");
 					return;
