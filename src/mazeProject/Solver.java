@@ -1,13 +1,18 @@
 package mazeProject;
 
+import java.util.ArrayList;
+
 public class Solver{
 	
+	ArrayList<Maps> currentMaps;
 	Maps currentMap;
 	
 	public Solver(Maps map) {
 		currentMap = map;
 	}
-
+	public Solver(ArrayList<Maps> maps) {
+		currentMaps = maps;
+	}
 	public boolean validPos(int y, int x) {
 		
 		if(y < 0 || y >= currentMap.map.length || x < 0 || x >= currentMap.map[y].length ) {
@@ -71,6 +76,15 @@ public class Solver{
 				System.out.println("There is no path");
 				return;
 			}
+		}	
+	}
+
+	public void multiMazeSolver() {
+		int i = 0;
+		while (i < currentMaps.size()) {
+			currentMap = currentMaps.get(i);
+			mazeSolver();
+			i++;
 		}
 	}
 }

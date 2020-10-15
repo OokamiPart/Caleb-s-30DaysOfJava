@@ -6,11 +6,9 @@ public class MazeSolver {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		MazeReader read = new MazeReader();
-		read.reader();
-		Maps map = new Maps(read.start);
-		map.map = read.map;
+		read.readers();
 		
-		Solver solver = new Solver(map);
-		solver.mazeSolver();		
+		Solver solver = new Solver(read.maps);
+		solver.multiMazeSolver();		
 	}
 }

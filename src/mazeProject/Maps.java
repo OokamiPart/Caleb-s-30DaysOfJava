@@ -8,4 +8,5 @@ public class Maps {
 	public Maps(Position position) {
 		walkthrough.push(position);
 	}
+
 }
